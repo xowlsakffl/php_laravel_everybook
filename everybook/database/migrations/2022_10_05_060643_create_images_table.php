@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->text('up_name');
-            $table->string('real_name');
             $table->unsignedInteger('size')->default(0);
             $table->string('extension', 10)->default("");
             $table->unsignedSmallInteger('download')->default(0);
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('images');
     }
 };

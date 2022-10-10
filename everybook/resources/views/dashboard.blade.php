@@ -22,9 +22,29 @@
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    0 <span class="font-normal">포스트</span>
+                    {{$user->posts->count()}} <span class="font-normal">포스트</span>
                 </p>
             </div>
         </div>
     </div>
+
+    <section class="mx-auto mt-20">
+        @if ($user->posts->count())
+            <h2 class="text-3xl text-center font-bold my-10">게시물</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach ($posts as $post)
+                <div>
+                    <a href="{{route('posts.show', ['post' => $post->id, 'user' => $user])}}">
+                        @if ($post->image)
+                            <img src="{{asset('uploads').'/'.$post->image->up_name.'.'.$post->image->extension}}" alt="">
+                        @endif
+                    </a>
+                </div>
+            @endforeach
+            </div>
+            <div class="my-10">{{$posts->links('pagination::tailwind')}}</div>
+        @else
+            <p class="text-gray-600 text-sm text-center font-bold">게시물이 없습니다.</p>
+        @endif
+    </section>
 @endsection
