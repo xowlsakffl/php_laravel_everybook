@@ -5,7 +5,7 @@
 팔로워, 팔로우 등 SNS의 전반적인 기능 구현
 
 ## 사용 스택 ⚒️
-Laravel<br>
+Laravel 9<br>
 mysql<br>
 tailwindcss<br>
 dropzone(드래그앤 드랍 이미지 업로드 패키지)<br>
