@@ -6,12 +6,13 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+
     <div class="container mx-auto md:flex">
         <div class="md:w-1/2">
             <img src="<?php echo e(asset('uploads').'/'.$post->image->up_name.'.'.$post->image->extension); ?>" alt="">
-
             <div class="p-3 flex items-center gap-4">
-                <form action="">
+                <form action="<?php echo e(route('posts.likes.store', $post)); ?>" method="POST">
+                    <?php echo csrf_field(); ?>
                     <div class="my-4">
                         <button type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show', 'index']);
     }
     
     public function index(User $user)
@@ -66,5 +66,22 @@ class PostController extends Controller
             'post' => $post,
             'user' => $user,
         ]);
+    }
+
+    public function destroy(Post $post)
+    {
+        $this->authorize('delete', $post);
+
+        $image_path = public_path('uploads/'.$post->image->up_name.'.'.$post->image->extension);
+        
+        if(File::exists($image_path)){
+            Image::where('up_name', $post->image->up_name)->delete();
+
+            unlink($image_path);
+        }
+
+        $post->delete();
+
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }

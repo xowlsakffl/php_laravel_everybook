@@ -4,6 +4,12 @@
 /public/storage
 /storage/*.key
 /vendor
+/config
+/.vscode
+/bootstrap
+/storage
+/tests
+
 .env
 .env.backup
 .phpunit.result.cache
@@ -13,4 +19,9 @@ auth.json
 npm-debug.log
 yarn-error.log
 /.idea
-/.vscode
+.env.example
+.gitattributes
+.gitignore
+.styleci.yal
+.artisan
+.phpunit.xml
