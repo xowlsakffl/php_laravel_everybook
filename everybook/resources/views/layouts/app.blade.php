@@ -45,8 +45,9 @@
             @yield('title')
         </h2>
         @yield('content')
+        @stack('scripts')
     </main>
-
+    
     <footer class="mt-10 text-center p-5 text-gray-500 font-Poppins font-bold uppercase">
         EveryBook - reserved {{now()->year}}
     </footer>
