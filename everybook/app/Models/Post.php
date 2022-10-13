@@ -20,10 +20,14 @@ class Post extends Model
     ];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id')->select(['name', 'username']);
     }
 
     public function image(){
         return $this->hasOne(Image::class);
+    }
+
+    public function coments(){
+        return $this->hasMany(Coment::class);
     }
 }

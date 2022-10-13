@@ -32,7 +32,7 @@
 
             @guest
             <nav class="flex gap-5 items-center">
-                <a href="" class="font-bold text-black text-sm">로그인</a>
+                <a href="{{route('login.index')}}" class="font-bold text-black text-sm">로그인</a>
                 <a href="{{route('register.index')}}" class="font-bold text-black text-sm">회원가입</a>
             </nav>
             @endguest
