@@ -40,4 +40,4 @@ Route::post('/{user:username?}/posts/{post}', [ComentController::class, 'store']
 
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 
-Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('likes.store');
+Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
