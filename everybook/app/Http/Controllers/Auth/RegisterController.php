@@ -19,6 +19,8 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        $request->request->add(['username' => Str::slug($request->username)]);
+
         $validate = $request->validate([
             'name' => ['required', 'max:30', 'alpha'],
             'username' => ['required', 'unique:users', 'min:3', 'max:30', 'alpha_num'],

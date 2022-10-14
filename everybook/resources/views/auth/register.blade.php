@@ -22,11 +22,11 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="username" class="mb-2 block uppercase text-gray-600 font-bold">아이디</label>
+                    <label for="username" class="mb-2 block uppercase text-gray-600 font-bold">닉네임</label>
                     <input type="text" id="username" name="username" placeholder="" class="border p-3 w-full rounded-lg
                     @error('username') 
                     border-red-500
-                    @enderror"  placeholder="아이디을 입력해주세요." value="{{old('username')}}">
+                    @enderror"  placeholder="닉네임을 입력해주세요." value="{{old('username')}}">
 
                     @error('username')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>

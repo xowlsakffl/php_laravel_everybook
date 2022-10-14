@@ -36,7 +36,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-5">
-                    <label for="username" class="mb-2 block uppercase text-gray-600 font-bold">아이디</label>
+                    <label for="username" class="mb-2 block uppercase text-gray-600 font-bold">닉네임</label>
                     <input type="text" id="username" name="username" placeholder="" class="border p-3 w-full rounded-lg
                     <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -47,7 +47,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>"  placeholder="아이디을 입력해주세요." value="<?php echo e(old('username')); ?>">
+unset($__errorArgs, $__bag); ?>"  placeholder="닉네임을 입력해주세요." value="<?php echo e(old('username')); ?>">
 
                     <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

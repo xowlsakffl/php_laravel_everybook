@@ -44,19 +44,6 @@ class PostController extends Controller
             'description' => $request->description,
         ]);
 
-        if($request->has('image')){
-            $path = public_path('uploads').'/'.$request->image;
-
-            $file = File::get($path);
-            
-            Image::create([
-                'post_id' => $post->id,
-                'up_name' => File::name($path),
-                'size' => File::size($path),
-                'extension' => File::extension($path),
-            ]);
-        }
-
         return redirect()->route('posts.index', auth()->user()->username);
     }
 
